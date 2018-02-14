@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="{% static 'MainPage/index.css' %}">
 </head>
 <body>
-<p>{% trans 'Привіт , світ!' %}</p>
-<form action="/home/" method="post">{% csrf_token %}
-    <select name="lang" id="">
-        <option value="uk">uk</option>
-        <option value="en">en</option>
-    </select>
-    <input type="submit" value="OK">
-</form>
+<p>{% trans 'title' %}</p>
+<ul>
+    <li><a href="/uk/home/">uk</a></li>
+    <li><a href="/en/home/">en</a></li>
+</ul>
 </body>
 </html>

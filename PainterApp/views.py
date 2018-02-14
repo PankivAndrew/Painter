@@ -5,6 +5,5 @@ from django.utils import translation
 
 
 def main_page(request):
-    if request.method == "POST":
-        translation.activate(request.POST.get("lang", ""))
+    print(translation.get_language())
     return render(request, 'MainPage/index.html')
