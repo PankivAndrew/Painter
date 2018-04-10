@@ -32,7 +32,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'PainterApp.apps.PainterAppConfig',
+    'Videos.apps.VideosConfig',
+    'Lectures.apps.LecturesConfig',
+    'ArtWorks.apps.ArtWorksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
