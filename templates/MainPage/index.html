@@ -1,12 +1,103 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+{% extends 'layouts/header.html' %}
+{% load static %}
+{% block title %}
+    Painter Portfolio
+{% endblock %}
+{% block css %}
     <link rel="stylesheet" href="{% static 'MainPage/index.css' %}">
-</head>
-<body>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-</body>
-</html>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+
+    {#            <main class="ga8ery">#}
+    <div class="col-md-9 gallery">
+        <div class="row">
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/10.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/11.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/12.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/13.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/5.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/15.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/16.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/8.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/7.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url("../../static/images/22.jpg")'
+                     onclick="overlayOn()"></div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div id="overlay">
+        <div class="image-opened">
+            <img class="image-opened__image" src="">
+            <p class="image-opened__description">
+                or Warmth and for Comfort, 2016.
+                84"x96" stretched sewn fabric
+            </p>
+        </div>
+        <span class="image-opened__close" onclick="overlayOff()">&times</span>
+    </div>
+
+
+    <script>
+        $(document.getElementsByClassName("item")).click(function () {
+            {#style = this.currentStyle || window.getComputedStyle(img, false),#}
+            {#bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");#}
+            console.log(this.style.backgroundImage);
+            $(".image-opened__image").css("background-image", this.style.backgroundImage);
+            {#console.log(this.firstChild.src)#}
+        });
+        function overlayOn() {
+            var overlay = '#overlay';
+            $(overlay).show();
+            $(overlay).show(500);
+            $(overlay).slideDown(500);
+            {#document.getElementById("overlay").style.display = "block";#}
+        }
+
+        function overlayOff() {
+            $('#overlay').hide();
+        }
+    </script>
+{% endblock %}
