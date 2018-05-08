@@ -1,22 +1,10 @@
 {% extends 'layouts/header.html' %}
-{% load static %}
+{% load staticfiles %}
 {% block title %}
     Painter Portfolio
 {% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'MainPage/index.css' %}">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
 {% endblock %}
 {% block content %}
 
@@ -24,50 +12,50 @@
     <div class="col-md-9 gallery">
         <div class="row">
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/10.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/10.jpg' %}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/11.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/11.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/12.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/12.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/13.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/13.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/5.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/5.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/15.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/15.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/16.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/16.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/8.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/8.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/7.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/7.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
             <div class="col-md-4 image-block">
-                <div class="item" style='background-image: url("../../static/images/22.jpg")'
+                <div class="item" style='background-image: url("{% static 'images/22.jpg'%}")'
                      onclick="overlayOn()"></div>
             </div>
         </div>
     </div>
 
 
-    </div>
+
     <div id="overlay">
         <div class="image-opened">
             <img class="image-opened__image" src="">

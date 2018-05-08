@@ -1,0 +1,46 @@
+.about-block {
+    height: 100vh;
+}
+
+.about-block p {
+    font-family: Trebuchet MS, serif;
+    font-size: 13px;
+    color: #727272;
+}
+
+.about-block p.bio {
+    padding: 22vh 0 10px 0;
+    font-weight: bold;
+    font-size: 16px;
+    color: #5c5c5c;
+}
+
+.social {
+    margin-top: 28px;
+}
+.social a {
+    text-decoration: none;
+}
+.fa {
+    padding-left: 12px;
+    cursor: pointer;
+    color: #333;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+}
+a:first-child .fa{
+    margin-left: -5px;
+}
+.fa-instagram {
+    color: white;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.fa-facebook-square {
+    color: #3B5998;
+}
+.fa-twitter {
+    color: #4099FF;
+}

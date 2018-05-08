@@ -1,0 +1,42 @@
+{% extends 'layouts/header.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    About me
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'About/about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-5 about-block">
+                <p class="bio">
+                    BIO
+                </p>
+                <p>
+                    Антон Проненко народився у Львові  в сім'ї художника-реставратора. Навчався у Державній художній школі ім. Т. Г. Шевченка. У 2011 році закінчив Національну академію образотворчого мистецтва та архітектури, відділення сценографії та екранних мистецтв. Надихаючись творами майстрів доби Відродження та ідеями Просвітництва, викладав образотворче мистецтво й сформував низку унікальних авторських лекторіїв. Індивідуальний гід культурними пам'ятками Італії. Працює в різних техніках  та жанрах, надаючи перевагу урбаністичним пейзажам та портретам.
+                </p>
+                <footer class="social">
+                    <a href="https://www.instagram.com/antin_pronenko_artist/">
+                        <i class="fa fa-2x fa-instagram" title="Instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/antin.pronenko">
+                        <i class="fa fa-2x fa-facebook-square" title="Facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/PronenkoAntin">
+                        <i class="fa fa-2x fa-twitter" title="Twitter"></i>
+                    </a>
+                </footer>
+            </div>
+            <div class="col-md-5">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
