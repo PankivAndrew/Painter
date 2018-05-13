@@ -1,0 +1,23 @@
+.lecture:first-child {
+    padding-top: 50px;
+}
+
+.lecture {
+    float: left;
+    padding: 10px 0;
+}
+
+.lecture p, .lecture a {
+    padding: 0 5px;
+    float: left;
+    word-break: break-all;
+    font-family: Trebuchet MS, serif;
+    font-size: 13px;
+}
+.lecture a {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.lecture p {
+    color: #727272;
+}

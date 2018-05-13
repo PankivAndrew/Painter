@@ -12,3 +12,8 @@ def main_page(request):
 def about(request):
     print(translation.get_language())
     return render(request, 'About/about.html')
+
+
+def lectures(request):
+    print(translation.get_language())
+    return render(request, 'Lectures/lectures.html')
