@@ -23,4 +23,3 @@ def header(request):
     blocks = Block.objects.all()
     print("blocks", blocks)
     render(request, 'layouts/header.html', {"blocks": blocks, "lang": translation.get_language()})
-
