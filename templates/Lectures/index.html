@@ -1,0 +1,56 @@
+{% extends 'layouts/header.html' %}
+{% load staticfiles %}
+{% block title %}
+    Painter Portfolio
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'MainPage/index.css' %}">
+{% endblock %}
+{% block content %}
+
+    <div class="col-md-9 gallery">
+        <div class="row">
+            {% for lecture in lectures %}
+            <div class="col-md-4 image-block">
+                <div class="item" style='background-image: url({{ lecture.Img.url }})'
+                     onclick="overlayOn()"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+    <div id="overlay">
+        <div class="image-opened">
+            <img class="image-opened__image" src="">
+            <p class="image-opened__description">
+                or Warmth and for Comfort, 2016.
+                84"x96" stretched sewn fabric
+            </p>
+        </div>
+        <span class="image-opened__close" onclick="overlayOff()">&times</span>
+    </div>
+
+
+    <script>
+        $(document.getElementsByClassName("item")).click(function () {
+            {#style = this.currentStyle || window.getComputedStyle(img, false),#}
+            {#bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");#}
+            console.log(this.style.backgroundImage);
+            $(".image-opened__image").css("background-image", this.style.backgroundImage);
+            {#console.log(this.firstChild.src)#}
+        });
+        function overlayOn() {
+            var overlay = '#overlay';
+            $(overlay).show();
+            $(overlay).show(500);
+            $(overlay).slideDown(500);
+            {#document.getElementById("overlay").style.display = "block";#}
+        }
+
+        function overlayOff() {
+            $('#overlay').hide();
+        }
+    </script>
+{% endblock %}

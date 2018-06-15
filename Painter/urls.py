@@ -14,9 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 from django.conf.urls import url
+
+from Painter import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,3 +31,6 @@ urlpatterns += i18n_patterns(
     url(r'videos/', include('Videos.urls')),
     url(r'lectures/', include('Lectures.urls')),
 )
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

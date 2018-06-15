@@ -4,6 +4,7 @@ from django.db import models
 class Block(models.Model):
     UkName = models.CharField(max_length=300, null=True, blank=True)
     EnName = models.CharField(max_length=300, null=True, blank=True)
+    Block_URL = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
         return self.UkName
