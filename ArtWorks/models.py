@@ -19,6 +19,15 @@ class SubBlock(models.Model):
         return self.UkName
 
 
+class SubSubBlock(models.Model):
+    UkName = models.CharField(max_length=300, null=True, blank=True)
+    EnName = models.CharField(max_length=300, null=True, blank=True)
+    SubBlock = models.ForeignKey(SubBlock, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.UkName
+
+
 class MasterPiece(models.Model):
     MasterPiece = models.ImageField(upload_to="Masterpieces")
     UkName = models.CharField(max_length=300, null=True, blank=True)

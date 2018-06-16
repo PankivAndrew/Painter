@@ -12,7 +12,7 @@
     <!-- JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -37,47 +37,50 @@
                     Pronenko
                 </h2>
                 <ul>
-                    <li>
-                        <div><a>Art Works</a></div>
-                        <ul class="menu__block">
-                            <li>
-                                <div><a>Paintings</a></div>
-                                <ul class="ul__block">
-                                    <li><div><a>blue</a></div></li>
-                                    <li><div><a>impression east</a></div></li>
-                                    <li><div><a>Faces</a></div></li>
-                                    <li><div><a>Sketches</a></div></li>
-                                    <li><div><a>comfort zone</a></div></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div><a>DigitalPainting</a></div>
-                            </li>
-                            <li>
-                                <div><a>graphics</a></div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div><a>Lectures</a></div>
-                    </li>
-                    <li>
-                        <div><a>Videos</a></div>
-                    </li>
-                    <li>
-                        <div><a>About me</a></div>
-                    </li>
+                    {% for block in block_sub_block %}
+                        <li>
+                            {% if lang == 'uk' %}
+                                <div><a>{{ block.0.UkName }}</a></div>
+                            {% else %}
+                                <div><a>{{ block.0.EnName }}</a></div>
+                            {% endif %}
+                            <ul class="menu__block">
+                            {% for sub in block.1 %}
+                                <li>
+                                    {% if lang == 'uk' %}
+                                        <div><a>{{ sub.0.UkName }}</a></div>
+                                    {% else %}
+                                        <div><a>{{ sub.0.EnName }}</a></div>
+                                    {% endif %}
+                                {% if sub.1 %}
+                                    <ul class="ul__block">
+                                    {% for sub_sub in sub.1 %}
+                                        <li>
+                                        {% if lang == 'uk' %}
+                                            <div><a>{{ sub_sub.UkName }}</a></div>
+                                        {% else %}
+                                            <div><a>{{ sub_sub.EnName }}</a></div>
+                                        {% endif %}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
                 </ul>
             </nav>
         </aside>
         {% block content %}
         {% endblock %}
-    <script>
-        $(document).ready(function () {
-            $(".menu div").click(function () {
-                $(this).parent().children("ul").slideToggle();
+        <script>
+            $(document).ready(function () {
+                $(".menu div").click(function () {
+                    $(this).parent().children("ul").slideToggle();
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 </html>
