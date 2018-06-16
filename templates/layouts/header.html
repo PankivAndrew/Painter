@@ -12,7 +12,7 @@
     <!-- JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -31,54 +31,53 @@
 <div class="container-fluid">
     <div class="row">
         <aside class="col-md-3 aside">
-            <nav>
+            <nav class="menu">
                 <h2 class="logo">
                     Anton <br>
                     Pronenko
                 </h2>
-                {#                <ul class="menu">#}
-                {#                    <li><a>Art Works</a></li>#}
-                {#                    <li class="menu__item_nested"><a>Painting</a></li>#}
-                {##}
-                {#                    <li class="menu__item_painting"><a>blue</a></li>#}
-                {#                    <li class="menu__item_painting"><a>impression east</a></li>#}
-                {#                    <li class="menu__item_painting"><a>Faces</a></li>#}
-                {#                    <li class="menu__item_painting"><a>Sketches</a></li>#}
-                {#                    <li class="menu__item_painting"><a>comfort zone</a></li>#}
-                {##}
-                {#                    <li class="menu__item_nested"><a>DigitalPainting</a></li>#}
-                {#                    <li class="menu__item_nested"><a>graphics</a></li>#}
-                {#                    <li><a>Lectures</a></li>#}
-                {#                    <li><a>Video</a></li>#}
-                {#                    <li><a>About me</a></li>#}
-                {#                </ul>#}
-                <ul class="menu">
-                    {% for block in blocks %}
-                        {% if lang == 'uk' %}
-                            <li><a href="http://localhost:8000/{{ lang }}/{{ block.Block_URL }}">{{ block.UkName }}</a></li>
-                        {% else %}
-                            <li><a href="http://localhost:8000/{{ lang }}/{{ block.Block_URL }}">{{ block.EnName }}</a></li>
-                        {% endif %}
-                    {% endfor %}
+                <ul>
+                    <li>
+                        <div><a>Art Works</a></div>
+                        <ul class="menu__block">
+                            <li>
+                                <div><a>Paintings</a></div>
+                                <ul class="ul__block">
+                                    <li><div><a>blue</a></div></li>
+                                    <li><div><a>impression east</a></div></li>
+                                    <li><div><a>Faces</a></div></li>
+                                    <li><div><a>Sketches</a></div></li>
+                                    <li><div><a>comfort zone</a></div></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div><a>DigitalPainting</a></div>
+                            </li>
+                            <li>
+                                <div><a>graphics</a></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div><a>Lectures</a></div>
+                    </li>
+                    <li>
+                        <div><a>Videos</a></div>
+                    </li>
+                    <li>
+                        <div><a>About me</a></div>
+                    </li>
                 </ul>
             </nav>
         </aside>
         {% block content %}
         {% endblock %}
-        <script>
-            $(document).ready(function () {
-                {#var nested = ".menu__item_nested";#}
-                $(".menu li:first").click(function () {
-                    {#if (!$(this).nextUntil('.menu__item_nested + .menu-block').siblings().length) {#}
-                    {#    return;#}
-                    {#console.log(this.nextAll('.menu__item_nested'));#}
-                    {#$(this).nextUntil('.menu__item_nested + .menu-block').slideToggle();#}
-                    $('.menu__item_nested').slideToggle();
-                });
-                $(".menu .menu__item_nested:first").click(function () {
-                    $('.menu__item_painting').slideToggle();
-                });
+    <script>
+        $(document).ready(function () {
+            $(".menu div").click(function () {
+                $(this).parent().children("ul").slideToggle();
             });
-        </script>
+        });
+    </script>
 </body>
 </html>
