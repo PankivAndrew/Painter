@@ -7,8 +7,8 @@ from django.utils import translation
 
 
 def lectures(request):
-    lectures = Lecture.objects.all()
+    lecture_and_links = [(lecture, list(LectureLink.objects.filter(Lecture=lecture))) for lecture in Lecture.objects.all()]
     blocks = Block.objects.all()
-    return render(request, 'Lectures/index.html', {'lectures': lectures,
-                                                   "blocks": blocks,
-                                                   "lang": translation.get_language()})
+    return render(request, 'Lectures/lectures.html', {'lecture_and_links': lecture_and_links,
+                                                      "blocks": blocks,
+                                                      'lang': translation.get_language()})

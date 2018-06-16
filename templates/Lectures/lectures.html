@@ -17,16 +17,20 @@
             </div>
             <div class="col-sm-7">
                 <div class="row">
-                    <div class="col-sm-12 lecture">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p>культурний проект. курс "що я забув у музеї"</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="https://culturalproject.org/courses/sch0-ya-zabuv-u-muzei">https://culturalproject.org/courses/sch0-ya-zabuv-u-muzei</a>
+                    {% for lecture in lecture_and_links %}
+                        <div class="col-sm-12 lecture">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p>{{ lecture.0.UkName }}</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    {% for link in lecture.1 %}
+                                        <a href="{{ link.Link }}">{{ link.Link }}</a>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    {% endfor %}
 
                     <div class="col-sm-12 lecture">
                         <div class="row">
@@ -81,7 +85,8 @@
                     <div class="col-sm-12 lecture">
                         <div class="row">
                             <div class="col-sm-6">
-                                <p>Проект креативного директора IZONE Андрея Горохова и Антона Проненко "Эрзац Ренессанса"</p>
+                                <p>Проект креативного директора IZONE Андрея Горохова и Антона Проненко "Эрзац
+                                    Ренессанса"</p>
                             </div>
                             <div class="col-sm-6">
                                 <a href="https://www.facebook.com/andrey.korova/posts/1230380297066099">https://www.facebook.com/andrey.korova/posts/1230380297066099</a>
