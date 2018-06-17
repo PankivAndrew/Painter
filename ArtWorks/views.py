@@ -8,8 +8,15 @@ from ArtWorks.models import SubSubBlock
 from django.utils import translation
 
 
-def main_page(request):
+def art_works(request):
+    sub = request.GET.get('sub')
+    sub_sub = request.GET.get('sub_sub')
     masterpieces = MasterPiece.objects.all()
+    if sub:
+        masterpieces = masterpieces.filter(SubBlock__EnName=sub)
+    elif sub_sub:
+        masterpieces = masterpieces.filter(SubSubBlock__EnName=sub_sub)
+
     block_sub_block = [[block, [[sub_block, list(SubSubBlock.objects.filter(SubBlock=sub_block))]
                                 for sub_block in list(SubBlock.objects.filter(Block=block))]] for block in
                        Block.objects.all()]

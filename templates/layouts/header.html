@@ -39,27 +39,44 @@
                 <ul>
                     {% for block in block_sub_block %}
                         <li>
+                        {% if block.1 %}
                             {% if lang == 'uk' %}
                                 <div><a>{{ block.0.UkName }}</a></div>
                             {% else %}
                                 <div><a>{{ block.0.EnName }}</a></div>
                             {% endif %}
+                        {% else %}
+                            {% if lang == 'uk' %}
+                                <div><a href="/{{ lang }}/{{ block.0.EnName }}">{{ block.0.UkName }}</a></div>
+                            {% else %}
+                                <div><a href="/{{ lang }}/{{ block.0.EnName }}">{{ block.0.EnName }}</a></div>
+                            {% endif %}
+                        {% endif %}
                             <ul class="menu__block">
                             {% for sub in block.1 %}
                                 <li>
+                                {% if sub.1 %}
                                     {% if lang == 'uk' %}
                                         <div><a>{{ sub.0.UkName }}</a></div>
                                     {% else %}
                                         <div><a>{{ sub.0.EnName }}</a></div>
                                     {% endif %}
+                                {% else %}
+                                    {% if lang == 'uk' %}
+                                        <div><a href="/{{ lang }}/{{ block.0.EnName }}?sub={{ sub.0.EnName }}">{{ sub.0.UkName }}</a></div>
+                                    {% else %}
+                                        <div><a href="/{{ lang }}/{{ block.0.EnName }}?sub={{ sub.0.EnName }}">{{ sub.0.EnName }}</a></div>
+                                    {% endif %}
+                                {% endif %}
+
                                 {% if sub.1 %}
                                     <ul class="ul__block">
                                     {% for sub_sub in sub.1 %}
                                         <li>
                                         {% if lang == 'uk' %}
-                                            <div><a>{{ sub_sub.UkName }}</a></div>
+                                            <div><a href="/{{ lang }}/{{ block.0.EnName }}?sub_sub={{ sub_sub.EnName }}">{{ sub_sub.UkName }}</a></div>
                                         {% else %}
-                                            <div><a>{{ sub_sub.EnName }}</a></div>
+                                            <div><a href="/{{ lang }}/{{ block.0.EnName }}?sub_sub={{ sub_sub.EnName }}">{{ sub_sub.EnName }}</a></div>
                                         {% endif %}
                                         </li>
                                         {% endfor %}
