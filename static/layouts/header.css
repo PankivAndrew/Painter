@@ -69,3 +69,23 @@
     to(#9d9e9a),
     color-stop(.6, #c5cbc5))
 }
+
+.dropdown {
+    position: fixed !important;
+    right: 18px;
+    top: 22px;
+    z-index: 2;
+}
+.dropdown-menu {
+    min-width: 54px !important;
+}
+.dropdown-menu>li>a {
+    padding: 1px 10px !important;
+}
+.dropdown-toggle::after {
+    display: none;
+}
+.fa-globe {
+    font-size: 30px;
+    color: grey;
+}
