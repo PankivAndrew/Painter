@@ -21,7 +21,15 @@
                         <div class="col-sm-12 lecture">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <p>{{ lecture.0.UkName }}</p>
+                                    {% if lang == 'uk' %}
+                                        <p>{{ lecture.0.UkName }}</p>
+                                    {% else %}
+                                        {% if lecture.0.EngName %}
+                                            <p>{{ lecture.0.EngName }}</p>
+                                        {% else %}
+                                            <p>{{ lecture.0.UkName }}</p>
+                                        {% endif %}
+                                    {% endif %}
                                 </div>
                                 <div class="col-sm-6">
                                     {% for link in lecture.1 %}
@@ -31,96 +39,6 @@
                             </div>
                         </div>
                     {% endfor %}
-
-                    <div class="col-sm-12 lecture">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p>скетчинг и лекции в Освітня станція 31В1</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="https://www.facebook.com/events/492970371037416/">https://www.facebook.com/events/492970371037416/</a>
-                                <a href="https://www.facebook.com/events/1535959719803274/">https://www.facebook.com/events/1535959719803274//</a>
-                                <a href="https://www.facebook.com/31v1education/photos/a.324658247723623.1073741833.304889763033805/695942297261881/?type=3&theater">https://www.facebook.com/31v1education/photos/a.324658247723623.1073741833.304889763033805/695942297261881/?type=3&theater</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 lecture">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p>арт середа в izone</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="https://www.facebook.com/events/116993332268997/">https://www.facebook.com/events/116993332268997/</a>
-                                <a href="https://www.facebook.com/antin.pronenko/posts/1588430784542897">https://www.facebook.com/antin.pronenko/posts/1588430784542897</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 lecture">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p>ренессанс</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="https://www.facebook.com/events/117368248864350/">https://www.facebook.com/events/117368248864350/</a>
-                                <a href="http://artukraine.com.ua/n/noviy-vidkritiy-lektoriy-vid-izone-rozpovidaye-pro-mistectvo-renesansu/#.WnNC7ojFJPZ">http://artukraine.com.ua/n/noviy-vidkritiy-lektoriy-vid-izone-rozpovidaye-pro-mistectvo-renesansu/#.WnNC7ojFJPZ</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 lecture">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p>античность</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="https://www.facebook.com/events/153849482015578/permalink/163513674382492">https://www.facebook.com/events/153849482015578/permalink/163513674382492</a>
-                                <a href="https://www.facebook.com/events/154847465011554/">https://www.facebook.com/events/154847465011554/</a>
-                                <a href="https://www.facebook.com/events/1097499373692537/permalink/1098220603620414/">https://www.facebook.com/events/1097499373692537/permalink/1098220603620414/</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 lecture">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p>Проект креативного директора IZONE Андрея Горохова и Антона Проненко "Эрзац
-                                    Ренессанса"</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="https://www.facebook.com/andrey.korova/posts/1230380297066099">https://www.facebook.com/andrey.korova/posts/1230380297066099</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 lecture">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p>арт простір sklo</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="https://www.facebook.com/events/568395833367076/">https://www.facebook.com/events/568395833367076/</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 lecture">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p>арт резиденции</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="http://kebbelvilla.de/de/anton-pronenko">http://kebbelvilla.de/de/anton-pronenko</a>
-                                <a href="https://izolyatsia.org/ua/project/residencies/pronenko-residency/">https://izolyatsia.org/ua/project/residencies/pronenko-residency/</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-sm-4">
-
                 </div>
             </div>
         </div>

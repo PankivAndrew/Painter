@@ -34,8 +34,8 @@
       <i class="fa fa-globe"></i>
   </button>
   <ul class="dropdown-menu pull-right">
-    <li><a href="#"><img src="../../static/images/languages/uk_1.png"></a></li>
-    <li><a href="#"><img src="../../static/images/languages/en_1.png"></a></li>
+    <li><a href="/uk{{ request.path|slice:"3:" }}"><img src="../../static/images/languages/uk_1.png"></a></li>
+    <li><a href="/en{{ request.path|slice:"3:" }}"><img src="../../static/images/languages/en_1.png"></a></li>
   </ul>
 </div>
 <div class="container-fluid">

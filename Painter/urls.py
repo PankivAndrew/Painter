@@ -28,8 +28,8 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     url(r'ArtWorks/', include('ArtWorks.urls')),
-    url(r'videos/', include('Videos.urls')),
     url(r'Lectures/', include('Lectures.urls')),
+    url(r'About-me/', include('AboutMe.urls'))
 )
 
 urlpatterns += staticfiles_urlpatterns()
