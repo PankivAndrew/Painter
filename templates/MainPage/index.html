@@ -12,28 +12,37 @@
     <div class="col-md-9 col-sm-9 gallery">
         <div class="row">
             {% for masterpiece in masterpieces %}
+                {% if lang == 'uk' %}
             <div class="col-md-4 col-sm-4 image-block">
                 <div class="item"
                      style='background-image: url({{ masterpiece.MasterPiece.url }})'
                      onclick="overlayOn()" role="img"
-                     aria-label="or Warmth and for Comfort, 2016."></div>
+                     aria-label="{{ masterpiece.UkDescription }}"></div>
             </div>
+                {% else %}
+                <div class="col-md-4 col-sm-4 image-block">
+                <div class="item"
+                     style='background-image: url({{ masterpiece.MasterPiece.url }})'
+                     onclick="overlayOn()" role="img"
+                     aria-label="{{ masterpiece.EnDescription }}"></div>
+            </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
 
 
 
-    <div id="overlay">
-        <div class="image-opened">
-            <img class="image-opened__image" src="">
-            <p class="image-opened__description">
+{#    <div id="overlay">#}
+{#        <div class="image-opened">#}
+{#            <img class="image-opened__image" src="">#}
+{#            <p class="image-opened__description">#}
                 {#                or Warmth and for Comfort, 2016.#}
                 {#                84"x96" stretched sewn fabric#}
-            </p>
-        </div>
-        <span class="image-opened__close" onclick="overlayOff()">&times</span>
-    </div>
+{#            </p>#}
+{#        </div>#}
+{#        <span class="image-opened__close" onclick="overlayOff()">&times</span>#}
+{#    </div>#}
 
 
     <script>
